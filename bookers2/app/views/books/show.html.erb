@@ -25,7 +25,10 @@
                         <% end %>
                     </td>
                     <td><%= @book.body %></td>
-                    <%# EditボタンとDestroyボタンを追加する %>
+                    <% if @book.user == current_user %>
+                        <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn bn-sm btn-success" %></td>
+                        <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "Are you sure?", class: "btn btn-danger" %></td>
+                    <% end %>
                 </tr>
             </tbody>
         </table>
