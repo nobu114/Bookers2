@@ -19,11 +19,7 @@
           <tr>
             <td>
               <%= link_to user_path(user.id) do %>
-                <% if user.image.attached? %>
-                    <%= image_tag user.image, size: "200x200" %>
-                <% else %>
-                    <%= image_tag "no_image", size: "200x200" %>
-                <% end %>
+                <%= image_tag user.get_image %>
               <% end %>
             </td>
             <td><%= user.name %></td>
