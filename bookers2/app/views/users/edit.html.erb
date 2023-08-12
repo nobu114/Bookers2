@@ -10,7 +10,7 @@
             <%= @user.errors.count %> errors prohibited this user from being saved:
           </span>
           <ul>
-            <% @book.errors.full_messages.each do |message| %>
+            <% @user.errors.full_messages.each do |message| %>
             <li><span class="error">
               <%= message %>
             </span></li>
